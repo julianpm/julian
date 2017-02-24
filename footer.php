@@ -15,9 +15,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'jul' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'jul' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'jul' ), 'jul', '<a href="https://automattic.com/" rel="designer">Underscores.me</a>' ); ?>
+			<h3>jklasdfjlasd</h3>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
