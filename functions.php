@@ -44,7 +44,7 @@ function jul_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'jul' ),
+		'primary' => esc_html__( 'Primary', 'jul' ),
 	) );
 
 	/*
@@ -143,3 +143,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+// OPTIONS PAGE
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page( 'Theme Options' );
+}
