@@ -1,6 +1,5 @@
 .site-header{
-	padding:20px 0;
-	border:1px solid red;
+	padding-top:20px;
 	.columns{
 		display: flex;
 		justify-content: space-between;
@@ -8,6 +7,7 @@
 	}
 	a{
 		color:$black;
+		text-decoration: none;
 	}
 }
 
@@ -18,8 +18,12 @@
 }
 
 #primary-menu{
+	margin:0;
+	padding:0;
 	li{
-		margin-left:20px;
+		margin-left:10px;
+		list-style: none;
+		display: inline-block;
 		&:first-of-type{
 			margin:0;
 		}
