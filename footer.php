@@ -18,6 +18,7 @@
 			<div class="row">
 				<div class="columns small-12">
 					<?php jul_social_media(); ?>
+					<p><?php echo esc_html_e( 'Copyright', 'jul' ); ?> © <?php echo date( 'Y' ); ?>. <?php echo esc_html_e( 'All rights are reserved.', 'jul' ); ?></p>
 				</div>
 			</div>
 		</div><!-- .site-info -->
