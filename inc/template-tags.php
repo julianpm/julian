@@ -120,3 +120,30 @@ function jul_category_transient_flusher() {
 }
 add_action( 'edit_category', 'jul_category_transient_flusher' );
 add_action( 'save_post',     'jul_category_transient_flusher' );
+
+
+// SOCIAL MEDIA REPEATER
+function jul_social_media(){
+	if ( function_exists( 'get_field' ) ){
+		$social_icons = get_field( 'jul_social_icons', 'option' );
+
+		if ( $social_icons ){
+
+			foreach ( $social_icons as $social_icon ){
+				$social_link = $social_icon['jul_social_media_link'];
+				$social_icon = $social_icon['jul_social_media_icon'];
+
+				if ( $social_link && $social_icon ){ ?>
+
+					<a href="<?php echo esc_url( $social_link ); ?>">
+						<i class="fa fa-<?php echo esc_html( $social_icon ); ?>" aria-hidden="true"></i>
+					</a>
+
+				<?php }
+
+			}
+
+		}
+
+	}
+}
