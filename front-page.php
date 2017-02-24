@@ -15,7 +15,11 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post(); ?>
 
-				<h1>;lkjasdf;</h1>
+				<div class="row">
+					<div class="columns small-12">
+						<h1>;lkjasdf;</h1>
+					</div>
+				</div>
 				
 			<?php
 			endwhile; // End of the loop. ?>
