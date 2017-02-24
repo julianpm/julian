@@ -28,10 +28,12 @@
 			<div class="row">
 				<div class="columns small-12">
 					<div class="site-branding">
-						<h1><?php echo esc_html_e( 'Julian Meanchoff', 'jul' ); ?></h1>
+						<a href="<?php echo esc_url( home_url() ); ?>">
+							<?php echo esc_html_e( 'Julian Meanchoff', 'jul' ); ?>
+						</a>
 					</div><!-- .site-branding -->
 
-					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 				</div>
 			</div>
 		</nav><!-- #site-navigation -->
