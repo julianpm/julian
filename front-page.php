@@ -17,7 +17,7 @@ get_header(); ?>
 
 				<div class="row">
 					<div class="columns small-12">
-						<h1>;lkjasdf;</h1>
+						<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 					</div>
 				</div>
 				
