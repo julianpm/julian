@@ -15,7 +15,11 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<h3>jklasdfjlasd</h3>
+			<div class="row">
+				<div class="columns small-12">
+					<?php jul_social_media(); ?>
+				</div>
+			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
