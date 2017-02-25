@@ -34,16 +34,16 @@
 
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 					<button class="nav-toggle">
-						<span></span>
-						<span></span>
-						<span></span>
-						<span></span>
+						<span class="bars"></span>
+						<span class="bars"></span>
+						<span class="close"></span>
+						<span class="close"></span>
 					</button>
 				</div>
 			</div>
 		</nav><!-- #site-navigation -->
 		<div class="flyout-nav">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</div>
 	</header><!-- #masthead -->
 
