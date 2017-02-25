@@ -121,6 +121,31 @@ function jul_category_transient_flusher() {
 add_action( 'edit_category', 'jul_category_transient_flusher' );
 add_action( 'save_post',     'jul_category_transient_flusher' );
 
+/**
+ * Display navigation to next/previous post when applicable.
+ * CUSTOM SINGLE-POST NAVIGATION
+ * TO GO IN TEMPLATE TAGS
+ */
+function jul_post_navigation() {
+	// Don't print empty markup if there's nowhere to navigate.
+	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+	$next     = get_adjacent_post( false, '', false );
+	if ( ! $next && ! $previous ) {
+		return;
+	}
+	?>
+	<div class="row section-padding">
+		<div class="columns small-12">	
+			<nav class="navigation posts-navigation" role="navigation">
+				<div class="nav-links">
+					<?php previous_post_link( '<div class="nav-previous">%link</div>', 'Previous' ); ?>
+					<?php next_post_link( '<div class="nav-next">%link</div>', 'Next' ); ?>
+				</div><!-- .nav-links -->
+			</nav><!-- .navigation -->
+		</div>
+	</div>
+	<?php
+}
 
 // SOCIAL MEDIA REPEATER
 function jul_social_media(){
