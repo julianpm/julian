@@ -21,6 +21,10 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
 			<div class="row section-padding">
+				<div class="columns small-12">
+					<h1 class="no-margin-top"><?php echo esc_html_e( 'Portfolio', 'jul' ); ?></h1>
+				</div>
+
 				<?php
 				/* Start the Loop */
 				while ( have_posts() ) : the_post(); ?>
