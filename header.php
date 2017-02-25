@@ -33,9 +33,18 @@
 					</div><!-- .site-branding -->
 
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+					<button class="nav-toggle">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
 				</div>
 			</div>
 		</nav><!-- #site-navigation -->
+		<div class="flyout-nav">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
