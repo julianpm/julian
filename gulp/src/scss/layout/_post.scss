@@ -1,26 +1,63 @@
 .post{
-	position:relative;
-	margin-bottom:30px;
-	@include breakpoint(large){
-		margin-bottom:11px;
-	}
-	.entry-title{
-		position:absolute;
-		top:0;
-		right:0;
-		bottom:0;
-		left:0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		text-decoration: none;
-		color:$black;
-		transition:0.5s;
-		h2{
-			margin:0;
+	.home &{
+		position:relative;
+		margin-bottom:30px;
+		@include breakpoint(large){
+			margin-bottom:11px;
 		}
-		&:hover{
-			background:rgba(0, 0, 0, 0.5);
+		.entry-title{
+			position:absolute;
+			top:0;
+			right:0;
+			bottom:0;
+			left:0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-decoration: none;
+			color:$black;
+			transition:0.5s;
+			&:hover{
+				background:rgba(0, 0, 0, 0.5);
+			}
+		}
+	}
+	.single-post &{
+		padding-top:40px;
+		.single-post-content{
+			border-bottom:1px solid #ececec;
+			.entry-title{
+				text-align: center;
+				@include font-size(24);
+				@include breakpoint(large){
+					@include font-size(40);
+				}
+			}
+		}
+		.posts-navigation{
+			.nav-links{
+				display: flex;
+				justify-content: space-between;
+				margin:0 auto;
+				width: 80%;
+				@include breakpoint(large){
+					width: 50%;
+				}
+				.nav-previous{
+					a::after{
+						content:'\f177';
+						font-family:'FontAwesome';
+						margin-left:5px;
+					}
+				}
+				.nav-next{
+					a::before{
+						content:'\f178';
+						font-family:'FontAwesome';
+						margin-right:5px;
+					}
+				}
+			}
 		}
 	}
 }
