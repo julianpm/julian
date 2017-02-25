@@ -10,13 +10,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if ( has_post_thumbnail() ){
-		the_post_thumbnail();
-	} ?>
 	<?php
-	if ( is_single() ) :
-		the_title( '<h1 class="entry-title">', '</h1>' );
-	else :
-		the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark" class="entry-title"><h2>', '</h2></a>' );
-	endif; ?>
+		
+		if ( has_post_thumbnail() ){
+			the_post_thumbnail();
+		}
+
+		the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark" class="entry-title"><h2 class="no-margin">', '</h2></a>' );
+	
+	?>
 </article><!-- #post-## -->
