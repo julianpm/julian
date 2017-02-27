@@ -172,3 +172,39 @@ function jul_social_media(){
 
 	}
 }
+
+// ABOUT INFO
+function jul_about(){
+	if ( function_exists( 'get_field' ) ){
+		$about = get_field( 'jul_about', 'option' );
+
+		if ( $about ){ ?>
+
+			<div class="row section-padding" id="about">
+				<div class="columns small-12">
+					<?php echo wp_kses_post( $about ); ?>
+				</div>
+			</div>
+
+		<?php }
+
+	}
+}
+
+// CONTACT INFO
+function jul_contact(){
+	if ( function_exists( 'get_field' ) ){
+		$contact = get_field( 'jul_contact', 'option' );
+
+		if ( $contact ){ ?>
+
+			<div class="row section-padding" id="contact">
+				<div class="columns small-12">
+					<?php echo wp_kses_post( $contact ); ?>
+				</div>
+			</div>
+
+		<?php }
+
+	}
+}
