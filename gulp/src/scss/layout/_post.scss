@@ -34,28 +34,30 @@
 				}
 			}
 		}
-		.posts-navigation{
-			.nav-links{
-				display: flex;
-				justify-content: space-between;
-				margin:0 auto;
-				width: 80%;
-				@include breakpoint(large){
-					width: 50%;
+	}
+}
+
+.posts-navigation{
+	.nav-links{
+		text-align: center;
+		div{
+			display: inline-block;
+			width: 120px;
+			margin:0 10px;
+			&.nav-previous{
+				text-align: right;
+				a::after{
+					content:'\f177';
+					font-family:'FontAwesome';
+					margin-left:5px;
 				}
-				.nav-previous{
-					a::after{
-						content:'\f177';
-						font-family:'FontAwesome';
-						margin-left:5px;
-					}
-				}
-				.nav-next{
-					a::before{
-						content:'\f178';
-						font-family:'FontAwesome';
-						margin-right:5px;
-					}
+			}
+			&.nav-next{
+				text-align: left;
+				a::before{
+					content:'\f178';
+					font-family:'FontAwesome';
+					margin-right:5px;
 				}
 			}
 		}
