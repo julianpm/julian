@@ -12,11 +12,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="row">
 		<div class="columns small-12">
-			<?php
-				if ( has_post_thumbnail() ){
-					the_post_thumbnail();
-				}
-			?>
+			<?php if ( has_post_thumbnail() ){ ?>
+				<a href="<?php echo esc_url( home_url( '#' ) ); ?>">
+					<?php the_post_thumbnail(); ?>
+				</a>
+			<?php } ?>
 		</div>
 	</div>
 	<div class="single-post-content section-padding">
