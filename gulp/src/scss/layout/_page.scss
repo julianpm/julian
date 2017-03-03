@@ -12,5 +12,8 @@ body{
 }
 
 .section-padding{
-	padding:40px 0;
+	padding:20px 0;
+	@include breakpoint(large){
+		padding:40px 0;
+	}
 }
