@@ -148,3 +148,47 @@ require get_template_directory() . '/inc/jetpack.php';
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page( 'Theme Options' );
 }
+
+// SEO FUNCTIONS
+if ( ! function_exists( 'jul_pre_get_document_title' ) ) :
+  /**
+  * Returns a custom <title> tag
+  *
+  */
+ 	function jul_pre_get_document_title( $title ) {
+ 
+ 		$jul_seo_title = get_field( 'jul_seo_title' );
+ 
+ 		if ( ! empty( $jul_seo_title ) ) {
+ 
+ 			$title = $jul_seo_title;
+ 
+ 			return $title;
+ 		}
+ 
+ 	}
+ 	add_filter( 'pre_get_document_title', 'jul_pre_get_document_title', 10 );
+ endif;
+ 
+ if ( ! function_exists( 'jul_seo_content' ) ) :
+ 	/**
+  * Displays meta content
+  *
+  */
+ 	function jul_seo_content() {
+ 
+ 		$jul_meta_description = get_field( 'jul_meta_description' );
+ 		$jul_meta_keywords = get_field( 'jul_meta_keywords' );
+
+ 		if ( ! empty( $jul_meta_description ) ) {
+ 
+ 			echo '<meta name="description" content="' . esc_attr( $jul_meta_description ) . '">';
+ 		}
+ 
+ 		if ( ! empty( $jul_meta_keywords ) ) {
+ 
+ 			echo '<meta name="keywords" content="' . esc_attr( $jul_meta_keywords ) . '">';
+ 		}
+ 
+ 	}
+ endif;
