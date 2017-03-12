@@ -24,6 +24,7 @@
 			<div class="columns small-12">
 				<?php the_title( '<h1 class="entry-title no-margin-top">', '</h1>' ); ?>
 				<?php the_content(); ?>
+				<?php jul_site_link(); ?>
 			</div>
 		</div>
 	</div>
