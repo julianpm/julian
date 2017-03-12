@@ -1,19 +1,33 @@
+html{
+	height: 100%;
+}
+
 body{
 	background: $beige;
+	height: 100%;
 }
 
 #page{
 	display: flex;
-	min-height: 100vh;
 	flex-direction: column;
-	#content{
-		flex:1;
-	}
+	height: 100%;
+}
+
+#content{
+	flex:1 0 auto;
 }
 
 .section-padding{
 	padding:20px 0;
 	@include breakpoint(large){
 		padding:40px 0;
+	}
+}
+
+.error-404{
+	text-align: center;
+	.page-title{
+		@include font-size(70);
+		margin:0;
 	}
 }
