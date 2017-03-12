@@ -208,3 +208,19 @@ function jul_contact(){
 
 	}
 }
+
+// SITE LINK
+function jul_site_link(){
+	if ( function_exists( 'get_field' ) ){
+		$site_link = get_field( 'jul_site_link' );
+		$site_link_text = get_field( 'jul_site_link_text' );
+
+		if ( $site_link && $site_link_text ){ ?>
+
+			<a class="btn" href="<?php echo esc_url( $site_link ); ?>">
+				<?php echo esc_html( $site_link_text ); ?>
+			</a>
+
+		<?php }
+	}
+}
