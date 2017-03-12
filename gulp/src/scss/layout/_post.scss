@@ -20,7 +20,7 @@
 				@include font-size(30);
 			}
 			&:hover{
-				background:rgba(0, 0, 0, 0.6);
+				background:rgba(0, 0, 0, 0.7);
 				h2{
 					display: block;
 				}
@@ -31,6 +31,7 @@
 		padding-top:40px;
 		.single-post-content{
 			border-bottom:1px solid #ececec;
+			text-align: center;
 			.entry-title{
 				text-align: center;
 				@include font-size(24);
@@ -38,31 +39,30 @@
 					@include font-size(40);
 				}
 			}
+			p:last-of-type{
+				margin-bottom:40px;
+			}
 		}
 	}
 }
 
 .posts-navigation{
 	.nav-links{
-		text-align: center;
 		div{
 			display: inline-block;
-			width: 120px;
-			margin:0 10px;
 			&.nav-previous{
-				text-align: right;
-				a::after{
+				a::before{
 					content:'\f177';
-					font-family:'FontAwesome';
-					margin-left:5px;
+					font-family: 'FontAwesome';
+					margin-right:8px;
 				}
 			}
 			&.nav-next{
-				text-align: left;
-				a::before{
+				float: right;
+				a::after{
 					content:'\f178';
-					font-family:'FontAwesome';
-					margin-right:5px;
+					font-family: 'FontAwesome';
+					margin-left:8px;
 				}
 			}
 		}
