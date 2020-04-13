@@ -1,8 +1,29 @@
 var gulp = require('gulp');
+var styles = require('gulp-sass');
 
-gulp.task('foo', function() {
-	console.log('hello julian');
+var paths = {
+	src: {
+		scss: 'src/scss/app.scss',
+		scssWatch: 'src/scss/*.scss'
+	},
+	dest: {
+		scss: 'assets/css/app.css'
+	}
+}
+
+gulp.task('styles', function() {
+	return gulp.src(paths.src.scss)
+		.pipe(styles({
+			errLogToConsole: true
+		}))
+		.pipe(gulp.dest(paths.dest.scss))
 });
+
+gulp.task('watch', function() {
+	gulp.watch(paths.src.scssWatch, gulp.series(['styles']));
+});
+
+gulp.task('default', gulp.series(['styles']));
 
 // 'use strict';
 
