@@ -4,6 +4,10 @@
   "description": "WordPress theme for Julian",
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2"
+    "gulp-sass": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-rename": "^2.0.0"
   }
 }

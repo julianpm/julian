@@ -1,21 +1,32 @@
 var gulp = require('gulp');
-var styles = require('gulp-sass');
+		styles = require('gulp-sass');
+		clean = require('gulp-clean-css');
+		autoprefixer = require('gulp-autoprefixer');
+		sourcemaps = require('gulp-sourcemaps');
+		rename = require('gulp-rename');
 
 var paths = {
 	src: {
 		scss: 'src/scss/app.scss',
-		scssWatch: 'src/scss/*.scss'
+		scssWatch: 'src/scss/**/*.scss'
 	},
 	dest: {
-		scss: 'assets/css/app.css'
+		scss: 'assets/css/'
 	}
 }
 
 gulp.task('styles', function() {
 	return gulp.src(paths.src.scss)
+		.pipe(sourcemaps.init())
 		.pipe(styles({
 			errLogToConsole: true
 		}))
+		.pipe(clean())
+		.pipe(autoprefixer())
+		.pipe(rename({
+			suffix: '.min'
+		}))
+		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(paths.dest.scss))
 });
 
@@ -23,7 +34,7 @@ gulp.task('watch', function() {
 	gulp.watch(paths.src.scssWatch, gulp.series(['styles']));
 });
 
-gulp.task('default', gulp.series(['styles']));
+gulp.task('default', gulp.series(['styles', 'watch']));
 
 // 'use strict';
 

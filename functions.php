@@ -106,7 +106,7 @@ add_action( 'widgets_init', 'jul_widgets_init' );
  */
 function jul_scripts() {
 	wp_enqueue_style( 'jul-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'jul-app', get_template_directory_uri() . '/assets/css/app.css' );
+	wp_enqueue_style( 'jul-app', get_template_directory_uri() . '/assets/css/app.min.css' );
 
 	wp_enqueue_script( 'jul-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -156,39 +156,39 @@ if ( ! function_exists( 'jul_pre_get_document_title' ) ) :
   *
   */
  	function jul_pre_get_document_title( $title ) {
- 
+
  		$jul_seo_title = get_field( 'jul_seo_title' );
- 
+
  		if ( ! empty( $jul_seo_title ) ) {
- 
+
  			$title = $jul_seo_title;
- 
+
  			return $title;
  		}
- 
+
  	}
  	add_filter( 'pre_get_document_title', 'jul_pre_get_document_title', 10 );
  endif;
- 
+
  if ( ! function_exists( 'jul_seo_content' ) ) :
  	/**
   * Displays meta content
   *
   */
  	function jul_seo_content() {
- 
+
  		$jul_meta_description = get_field( 'jul_meta_description' );
  		$jul_meta_keywords = get_field( 'jul_meta_keywords' );
 
  		if ( ! empty( $jul_meta_description ) ) {
- 
+
  			echo '<meta name="description" content="' . esc_attr( $jul_meta_description ) . '">';
  		}
- 
+
  		if ( ! empty( $jul_meta_keywords ) ) {
- 
+
  			echo '<meta name="keywords" content="' . esc_attr( $jul_meta_keywords ) . '">';
  		}
- 
+
  	}
  endif;
