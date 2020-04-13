@@ -1,0 +1,9 @@
+{
+  "name": "julian",
+  "version": "1.0.0",
+  "description": "WordPress theme for Julian",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  }
+}
