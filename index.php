@@ -34,11 +34,11 @@ get_header(); ?>
 					<div class="columns small-12 large-6">
 						<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 					</div>
-				
+
 				<?php
 				endwhile; ?>
 			</div>
-			
+
 			<?php jul_contact();
 
 		endif; ?>

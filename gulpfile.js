@@ -4,16 +4,27 @@ var gulp = require('gulp');
 		autoprefixer = require('gulp-autoprefixer');
 		sourcemaps = require('gulp-sourcemaps');
 		rename = require('gulp-rename');
+		concat = require('gulp-concat');
+		uglify = require('gulp-uglify');
+		livereload = require('gulp-livereload');
 
 var paths = {
 	src: {
+		js: 'src/js/**/*.js',
+		php: './**/*.php',
 		scss: 'src/scss/app.scss',
 		scssWatch: 'src/scss/**/*.scss'
 	},
 	dest: {
+		js: 'assets/js/',
 		scss: 'assets/css/'
 	}
 }
+
+gulp.task('php', function() {
+	return gulp.src(paths.src.php)
+		.pipe(livereload())
+});
 
 gulp.task('styles', function() {
 	return gulp.src(paths.src.scss)
@@ -28,13 +39,25 @@ gulp.task('styles', function() {
 		}))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(paths.dest.scss))
+		.pipe(livereload())
+});
+
+gulp.task('js', function() {
+	return gulp.src(paths.src.js)
+		.pipe(concat('app.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest(paths.dest.js))
+		.pipe(livereload())
 });
 
 gulp.task('watch', function() {
+	livereload.listen();
+	gulp.watch(paths.src.js, gulp.series(['js']));
+	gulp.watch(paths.src.php, gulp.series(['php']));
 	gulp.watch(paths.src.scssWatch, gulp.series(['styles']));
 });
 
-gulp.task('default', gulp.series(['styles', 'watch']));
+gulp.task('default', gulp.series(['php', 'styles', 'js', 'watch']));
 
 // 'use strict';
 
