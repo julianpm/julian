@@ -22,29 +22,31 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
-	<header id="masthead" class="site-header" role="banner">
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<div class="row">
-				<div class="columns small-12">
-					<div class="site-branding">
-						<a href="<?php echo esc_url( home_url() ); ?>">
-							<?php echo esc_html_e( 'Julian Meanchoff', 'jul' ); ?>
-						</a>
-					</div><!-- .site-branding -->
+	<div class="wrapper">
+		<header id="masthead" class="site-header" role="banner">
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<div class="row">
+					<div class="columns small-12">
+						<div class="site-branding">
+							<a href="<?php echo esc_url( home_url() ); ?>">
+								<?php echo esc_html_e( 'Julian Meanchoff', 'jul' ); ?>
+							</a>
+						</div><!-- .site-branding -->
 
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-					<button class="nav-toggle">
-						<span class="bars"></span>
-						<span class="bars"></span>
-						<span class="close"></span>
-						<span class="close"></span>
-					</button>
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+						<button class="nav-toggle">
+							<span class="bars"></span>
+							<span class="bars"></span>
+							<span class="close"></span>
+							<span class="close"></span>
+						</button>
+					</div>
 				</div>
+			</nav><!-- #site-navigation -->
+			<div class="flyout-nav">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 			</div>
-		</nav><!-- #site-navigation -->
-		<div class="flyout-nav">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</div>
-	</header><!-- #masthead -->
+		</header><!-- #masthead -->
+	</div>
 
 	<div id="content" class="site-content">

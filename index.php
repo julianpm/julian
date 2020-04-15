@@ -18,34 +18,40 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		if ( have_posts() ) : ?>
+		if ( have_posts() ) :
 
-			<?php jul_about(); ?>
+			echo '<div class="wrapper">';
 
-			<div class="row">
-				<div class="columns small-12">
-					<h1 class="no-margin-top"><?php echo esc_html_e( 'Portfolio', 'jul' ); ?></h1>
+				jul_about();
+				?>
+
+				<div class="row">
+					<div class="columns small-12">
+						<h1 class="no-margin-top"><?php echo esc_html_e( 'Portfolio', 'jul' ); ?></h1>
+					</div>
+
+					<?php
+					/* Start the Loop */
+					while ( have_posts() ) : the_post(); ?>
+
+						<div class="columns small-12 large-6">
+							<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+						</div>
+
+					<?php
+					endwhile; ?>
 				</div>
 
 				<?php
-				/* Start the Loop */
-				while ( have_posts() ) : the_post(); ?>
+				jul_contact();
 
-					<div class="columns small-12 large-6">
-						<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-					</div>
+			echo '</div>';
 
-				<?php
-				endwhile; ?>
-			</div>
-
-			<?php jul_contact();
-
-		endif; ?>
+		endif;
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-
 get_footer();
